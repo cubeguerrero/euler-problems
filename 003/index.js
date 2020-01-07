@@ -21,4 +21,6 @@ function getAllPrimeFactors(n) {
   return factors
 }
 
-console.log(getAllPrimeFactors(600851475143))
+var primeFactors = getAllPrimeFactors(600851475143)
+var largest = primeFactors[primeFactors.length - 1]
+console.log(largest)

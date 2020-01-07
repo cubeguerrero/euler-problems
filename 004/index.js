@@ -7,16 +7,16 @@ function reverse(n) {
 }
 
 var i, j, product;
-var palindromes = []
+var largest = 0;
 
 for (i = 999; i >= 100; i--) {
   for (j = 999; j >= 100; j--) {
     product = i * j
 
-    if (isNumberPalindrome(product)) {
-      console.log(i, j, product)
-      palindromes.push(product)
+    if (isNumberPalindrome(product) && product > largest) {
+      largest = product
     }
   }
 }
 
+console.log(largest);
