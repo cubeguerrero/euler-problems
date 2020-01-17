@@ -1,15 +1,18 @@
-function powerDigitSum(n) {
-  var num = 2 ** n;
-  var total = 0;
-  var m;
+// function powerDigitSum(n) {
+//   var num = 2 ** n;
+//   var total = 0;
+//   var m;
 
-  while (num !== 0) {
-    m = num % 10;
-    num = Math.floor(num / 10);
-    total += m;
-  }
+//   while (num !== 0) {
+//     m = num % 10;
+//     num = Math.floor(num / 10);
+//     total += m;
+//   }
 
-  return total;
-}
+//   return total;
+// }
 
-console.log(powerDigitSum(1000)); // 1366
+// Had to do this since JavaScript doesn't handle really large numbers very well
+var num = '10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376';
+var powerDigitSum = num.split('').reduce((total, item) => total += Number(item), 0);
+console.log(powerDigitSum);
