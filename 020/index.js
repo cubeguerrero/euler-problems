@@ -1,4 +1,4 @@
-const bigInt = require("./BigInteger");
+const bigInt = require("../_utils/BigInteger");
 
 function factorial(n) {
   let total = bigInt(1);

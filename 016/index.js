@@ -1,18 +1,27 @@
-// function powerDigitSum(n) {
-//   var num = 2 ** n;
-//   var total = 0;
-//   var m;
+const bigInt = require('../_utils/BigInteger');
 
-//   while (num !== 0) {
-//     m = num % 10;
-//     num = Math.floor(num / 10);
-//     total += m;
-//   }
+function powerOfTwo(n) {
+  let total = bigInt(1);
+  let i = 0;
+  for (i = 0; i < n; i++) {
+    total = total.times(2);
+  }
 
-//   return total;
-// }
+  return total;
+}
 
-// Had to do this since JavaScript doesn't handle really large numbers very well
-var num = '10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376';
-var powerDigitSum = num.split('').reduce((total, item) => total += Number(item), 0);
-console.log(powerDigitSum);
+function powerDigitSum(n) {
+  var num = powerOfTwo(n);
+  var total = bigInt(0);
+  var m, divMod;
+
+  while (num.compare(0) !== 0) {
+    divMod = num.divmod(10);
+    num = divMod.quotient;
+    total = total.plus(divMod.remainder);
+  }
+
+  return total;
+}
+
+console.log(powerDigitSum(1000));
