@@ -9,7 +9,6 @@ function getData(filename) {
   });
 }
 
-
 const data = getData('data.txt');
 
 function maxSum(data) {
