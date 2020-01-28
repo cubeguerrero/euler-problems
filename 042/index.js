@@ -19,7 +19,12 @@ function getWordValue(word) {
   return total;
 }
 
-// Got the positive value of the quadratic formula
+// Get the positive value resulting from quadratic formula
+// t = (1/2)*n*(n+1) is the triangle formula and since we know `t`
+// we can simplify the solution into
+// 2*t = n*(n + 1)
+// 0 = n**2 + n + 2*t
+// Then we can use the quadratic formula to solve for the positive factor
 function isTriangleWord(sum) {
   let a = 1;
   let b = 1;
