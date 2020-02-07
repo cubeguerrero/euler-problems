@@ -10,15 +10,8 @@ function factorial(n) {
   if (n in factorials) {
     return factorials[n];
   }
-
-  let total = 1n;
-  let i;
-  for (i = n; i > 1n; i--) {
-    total *= i;
-  }
-  factorials[n] = total;
-
-  return total;
+  factorials[n] = factorials[n-1n] * n;
+  return factorials[n];
 }
 
 function combination(n, r) {
@@ -32,7 +25,6 @@ function solution() {
   for (n = 1n; n <= 100n; n++) {
     for (r = 0n; r <= n; r++) {
       if (combination(n, r) >= 1000000) {
-        console.log(n, r, combination(n, r));
         results.push([n, r])
       }
     }
