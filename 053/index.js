@@ -41,4 +41,6 @@ function solution() {
   console.log(results.length);
 }
 
+console.time("solution");
 solution();
+console.timeEnd("solution");
