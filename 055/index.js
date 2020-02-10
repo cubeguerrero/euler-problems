@@ -13,7 +13,7 @@ function isPalindome(i) {
 }
 
 function isLycrel(n) {
-  let i = 0;
+  let i = 0
   let num = n
   for (; i < 50; i++) {
     num += reverseNum(num)
