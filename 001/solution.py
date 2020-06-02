@@ -1,16 +1,10 @@
-def solution():
+def solution(n):
     total = 0
-
-    for i in range(1, 1000):
+    for i in range(n):
         if i % 3 == 0 or i % 5 == 0:
-            total = total + i
+            total += i
 
-    print(total)
+    return total
 
-
-if __name__ == "__main__":
-    import time
-    start = time.perf_counter()
-    solution()
-    end = time.perf_counter() - start
-    print(end)
+if __name__ == '__main__':
+    print(solution(1000))
